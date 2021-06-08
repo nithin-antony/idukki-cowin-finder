@@ -7,7 +7,7 @@ function App() {
   const [data_18_today, setData_18_today] = useState([]);
   const [data_18_tomorrow, setData_18_tomorrow] = useState([]);
   const today = moment(new Date()).format("DD-MM-YYYY");
-  const tomorrow = moment().add(1,'days').format("DD-MM-YYYY");
+  const tomorrow = moment().add(1, "days").format("DD-MM-YYYY");
   console.log(tomorrow);
   const BASE_URL = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?`;
   useEffect(() => {
@@ -46,7 +46,7 @@ function App() {
           }
         })
       );
-  }, []);
+  }, [BASE_URL, today, tomorrow]);
   return (
     <>
       <h1>Vaccination Drive Today({today})</h1>
